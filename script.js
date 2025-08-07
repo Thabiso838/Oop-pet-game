@@ -25,9 +25,17 @@ let currentPet = null;
 function choosePet(type) {
   if (type === 'dog') {
     currentPet = new Pet('Dog', 'Woof!', 'images (1).jpeg');
-  } else {
+  } else if (type === 'cat') {
     currentPet = new Pet('Cat', 'Meow!', 'download.webp');
+  } else if (type === 'lion') {
+    currentPet = new Pet('lion', 'raoring!', '020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg');
+  } else if (type === 'snake') {
+    currentPet = new Pet('snake', 'hiss!', '12_-_The_Mystical_King_Cobra_and_Coffee_Forests.jpg');
   }
+
+  
+
+
 
   document.getElementById('petImage').src = currentPet.image;
   document.getElementById('game').style.display = 'block';
@@ -51,7 +59,10 @@ function updateCounter(count) {
 function showFunActions(petName) {
   const actions = {
     'Dog': ['Fetch Ball', 'Wag Tail', 'Chase Mouse'],
-    'Cat': ['Pounce', 'Purr', 'Chase Laser']
+    'Cat': ['Pounce', 'Purr', 'Chase Laser'],
+    'lion': ['chase', 'furr', 'hunt', 'raorr'],
+    'snake': ['hiss', 'spitting', 'venom'],
+  
   };
 
   const actionBox = document.getElementById('actions');
