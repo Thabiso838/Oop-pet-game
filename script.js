@@ -1,13 +1,17 @@
 class Pet {
-  constructor(name, sound, image) {
+  constructor(name, soundText, image, soundUrl) {
     this.name = name;
-    this.sound = sound;
+    this.soundText = soundText;
     this.image = image;
+    this.soundUrl = new Audio (soundUrl);
     this.playCount = 0;
   }
 
   speak() {
-    alert(this.sound);
+    alert(this.soundText);
+    this.soundUrl.currentTime = 0;
+    this.soundUrl.play();
+
   }
 
   play() {
@@ -24,13 +28,13 @@ let currentPet = null;
 // function to choose a pet
 function choosePet(type) {
   if (type === 'dog') {
-    currentPet = new Pet('Dog', 'Woof!', 'images (1).jpeg');
+    currentPet = new Pet('Dog', 'Woof!', 'images (1).jpeg', 'media/dog-bark-effect-382711.mp3');
   } else if (type === 'cat') {
-    currentPet = new Pet('Cat', 'Meow!', 'download.webp');
+    currentPet = new Pet('Cat', 'Meow!', 'download.webp', 'media/cat-meow-8-fx-306184.mp3');
   } else if (type === 'lion') {
-    currentPet = new Pet('lion', 'raoring!', '020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg');
+    currentPet = new Pet('lion', 'Raoring!', '020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg', 'media/lion-roar-6011.mp3');
   } else if (type === 'snake') {
-    currentPet = new Pet('snake', 'hiss!', '12_-_The_Mystical_King_Cobra_and_Coffee_Forests.jpg');
+    currentPet = new Pet('Snake', 'Hiss!', '12_-_The_Mystical_King_Cobra_and_Coffee_Forests.jpg', 'media/snake-hiss-95241.mp3');
   }
 
   
