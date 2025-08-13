@@ -3,6 +3,13 @@ body {
   background: #94a79c;
   text-align: center;
   padding: 30px;
+  background:url(577017-blue-white.jpg) ;
+}
+#nav-bar{
+  background-color: aquamarine;
+  padding-top: 5%;
+  text-align: center;
+  
 }
 
 h1 {
